@@ -20,6 +20,6 @@ data_summary <- function(in_data, varname, groupnames){
   }
   data_sum<-plyr::ddply(in_data, groupnames, .fun=summary_func,
                   varname)
-  data_sum <- plyr::rename(data_sum, c("mean" = paste0("mean_", varname)))
+  data_sum <- plyr::rename(data_sum, c("mean" = paste0(varname)))
   return(data_sum)
 }
